@@ -1,1 +1,1 @@
-web: gunicorn FlaskMarsApp:app
+web: gunicorn -b :$PORT FlaskMarsApp:app
