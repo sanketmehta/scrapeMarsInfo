@@ -1,1 +1,1 @@
-worker: python FlaskMarsApp.py
+web: gunicorn FlaskMarsApp:app
