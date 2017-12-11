@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>
+        <strong>Mission To Mars</strong>
+      </h1>
+      <p>
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+      </p>
+    </div>
+
+    <!-- <div class="jumbotron"> -->
+      <!-- <div class="container" style="width:1100px"> -->
+        <div class="row">
+          <div class="col-md-12">
+            <h2>
+              <strong>Latest Mars News</strong>
+            </h2>
+            <h4>
+              <strong>{{results.news_title}}</strong>
+            </h4>
+            <p>{{results.news_p}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <h2>
+              <strong>Featured Mars Image</strong>
+            </h2>
+            <img src={{results.featured_image_url}} heigth=700 width=700>
+          </div>
+          <div class="col-md-4">
+            <br>
+            <div style="border:solid;padding:5px;">
+            <h4>
+              <strong>Current Weather on Mars</strong>
+            </h4>
+            <p>{{results.mars_weather}}</p>
+          </div>
+            <h4>
+              <strong>Mars Facts</strong>
+            </h4>
+            {{results2|safe}}
+          </div>
+        <!-- </div> -->
+      <!-- </div> -->
+      <div class="jumbotron">
+        <div class="container" style="width:1000px">
+          <div class="col-md-12">
+            <h2 style="text-align:center;">
+              <strong>Mars Hemispheres</strong>
+            </h2>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <img src={{results4[0]}} heigth=450 width=450>
+            <h4>
+              <strong>{{results3[0]}}</strong>
+            </h4>
+          </div>
+          <div class="col-md-6">
+            <img src={{results4[1]}} heigth=450 width=450>
+            <h4>
+              <strong>{{results3[1]}}</strong>
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <img src={{results4[2]}} heigth=450 width=450>
+            <h4>
+              <strong>{{results3[2]}}</strong>
+            </h4>
+          </div>
+          <div class="col-md-6">
+            <img src={{results4[3]}} heigth=450 width=450>
+            <h4>
+              <b>{{results3[3]}}</b>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
