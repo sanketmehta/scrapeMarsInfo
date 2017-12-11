@@ -13,7 +13,7 @@ from datetime import datetime
 
 def scrape():
     dt = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
-    print(dt)
+    # print(dt)
 
     # Start the WebDriver and load the page
     wd = webdriver.Chrome()
@@ -57,7 +57,7 @@ def scrape():
         image_href = style1.split("'")[1]
 
     featured_image_url = nasa_website_base + image_href
-    print(featured_image_url)
+    # print(featured_image_url)
 
     r2 = requests.get("https://twitter.com/marswxreport?lang=en")
     data2 = r2.text
@@ -67,7 +67,7 @@ def scrape():
     para1 = first_div.find('p', {"class": "TweetTextSize"}).getText()
 
     mars_weather = para1
-    print(mars_weather)
+    # print(mars_weather)
 
     r3 = requests.get("https://space-facts.com/mars/")
     data3 = r3.text
@@ -85,7 +85,7 @@ def scrape():
                         'value':val1})
 
     df_mars.set_index('description', inplace=True)
-    print(df_mars)
+    # print(df_mars)
 
 
     astrogeology_base = "https://astrogeology.usgs.gov/"

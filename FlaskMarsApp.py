@@ -3,7 +3,7 @@ import datetime as dt
 import numpy as np
 import pandas as pd
 import pymongo
-import pprint
+# import pprint
 
 
 from flask import Flask, render_template, jsonify, redirect
