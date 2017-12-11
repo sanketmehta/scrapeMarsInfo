@@ -16,7 +16,9 @@ def scrape():
     # print(dt)
 
     # Start the WebDriver and load the page
-    wd = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    wd = webdriver.Chrome(chrome_options=options)
     wd.get('https://mars.nasa.gov/news/')
 
     # Wait for the dynamically loaded elements to show up
@@ -38,7 +40,8 @@ def scrape():
     nasa_website_base = "https://www.jpl.nasa.gov"
 
     # Start the WebDriver and load the page
-    wd = webdriver.Chrome()
+    # wd = webdriver.Chrome()
+    wd = webdriver.Chrome(chrome_options=options)
     wd.get('https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars')
 
     # Wait for the dynamically loaded elements to show up
