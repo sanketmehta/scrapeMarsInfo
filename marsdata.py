@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 
 import pandas as pd
 import requests
+import os
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,9 +18,9 @@ def scrape():
 
     # Start the WebDriver and load the page
     options = webdriver.ChromeOptions()
-    options.binary_location = GOOGLE_CHROME_BIN
+    options.binary_location = os.environ['GOOGLE_CHROME_BIN']
     options.add_argument('--headless')
-    wd = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
+    wd = webdriver.Chrome(executable_path=os.environ['CHROMEDRIVER_PATH'], chrome_options=options)
     wd.get('https://mars.nasa.gov/news/')
 
     # Wait for the dynamically loaded elements to show up
