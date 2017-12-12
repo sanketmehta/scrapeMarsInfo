@@ -24,7 +24,7 @@ def scrape():
     wd.get('https://mars.nasa.gov/news/')
 
     # Wait for the dynamically loaded elements to show up
-    WebDriverWait(wd, 20).until(
+    WebDriverWait(wd, 3).until(
         EC.visibility_of_element_located((By.CLASS_NAME, "content_title")))
 
     # And grab the page HTML source
